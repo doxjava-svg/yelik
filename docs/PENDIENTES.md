@@ -10,10 +10,11 @@ Tareas abiertas que necesitan **datos del dueño** o son mejoras opcionales.
 - [x] **Número de WhatsApp confirmado:** `+58 412-5863169` — verificado contra el sello de marca del producto (2026-08-31).
 - [x] **Usuario de Instagram confirmado:** `@yelik_shop` — verificado contra el sello de marca. Se descartó `@yelikshop_helados`.
 - [x] **Enlace de Instagram** apuntando a `https://www.instagram.com/yelik_shop` (footer: contacto y botón social).
+- [x] **Facebook eliminado** del footer (no existe la página) y reemplazado por un botón de **WhatsApp**.
 
 ## 🔴 Necesita tu confirmación / datos
 
-- [ ] **Facebook.** Es el único enlace que sigue apuntando a `#`. Definir: ¿hay página de Facebook (dar URL) o se elimina el botón?
+- [ ] **URL de TikTok.** El ícono ya está en el footer en modo "próximamente" (sin enlace). Cuando exista la cuenta, pasar la URL: en `index.html` hay que cambiar el `<span class="ft-social-soon">` por `<a href="URL" target="_blank" rel="noopener">` y quitar la clase.
 - [ ] **Precios.** Por indicación del dueño **NO** se muestran precios por ahora. Reactivar si se decide agregarlos a las tarjetas de sabor.
 - [ ] **Dominio real.** Reemplazar `TU-DOMINIO.com` en el `<head>` (etiquetas `canonical` y `og:image`) por el dominio definitivo.
 - [ ] **Datos de operación (opcional pero recomendado).** Zona de entrega / retiro, horario y pedido mínimo, para reforzar la sección "Cómo Pedir".

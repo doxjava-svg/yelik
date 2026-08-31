@@ -13,7 +13,13 @@ Datos de contacto confirmados contra el **sello de marca** del producto (la etiq
 - **Usuario de Instagram corregido:** `@yelikshop_helados` → **`@yelik_shop`**. El sello es la fuente de verdad; el handle anterior no existía.
 - **Enlaces de Instagram reales:** el texto de contacto y el botón social del footer ahora apuntan a `https://www.instagram.com/yelik_shop` (antes `href="#"`), con `target="_blank"` y `rel="noopener"`.
 - **Número de WhatsApp validado:** el sello muestra `+58 412 5863169`, lo que **confirma** la corrección `472` → `412` hecha en la v1.0.0.
-- Pendiente: el botón de Facebook sigue en `href="#"` a la espera de definir si existe la página.
+
+### Redes del footer reorganizadas
+
+- **Facebook eliminado** (no existe la página).
+- **WhatsApp agregado** como botón social, enlazado a `wa.me/584125863169`.
+- **TikTok agregado en modo "próximamente"**: se muestra el ícono pero **no es un enlace** — es un `<span class="ft-social-soon">` con fondo rosa suave, `cursor:default` y `aria-label="TikTok: próximamente"`. Cuando exista la cuenta, basta convertirlo en `<a href="…">` y quitarle la clase.
+- Resultado: **ya no queda ningún `href="#"`** en toda la página.
 
 ---
 
