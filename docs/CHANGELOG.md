@@ -6,6 +6,17 @@ El formato sigue un estilo tipo *Keep a Changelog*. Las fechas están en formato
 
 ---
 
+## [2.1.0] — 2026-08-31
+
+Datos de contacto confirmados contra el **sello de marca** del producto (la etiqueta circular azul que llevan los vasitos).
+
+- **Usuario de Instagram corregido:** `@yelikshop_helados` → **`@yelik_shop`**. El sello es la fuente de verdad; el handle anterior no existía.
+- **Enlaces de Instagram reales:** el texto de contacto y el botón social del footer ahora apuntan a `https://www.instagram.com/yelik_shop` (antes `href="#"`), con `target="_blank"` y `rel="noopener"`.
+- **Número de WhatsApp validado:** el sello muestra `+58 412 5863169`, lo que **confirma** la corrección `472` → `412` hecha en la v1.0.0.
+- Pendiente: el botón de Facebook sigue en `href="#"` a la espera de definir si existe la página.
+
+---
+
 ## [2.0.0] — 2026-08-31
 
 Reconstrucción completa del landing **fiel al prototipo de diseño** (`Prototipo.png`), construida con un workflow de **6 agentes en paralelo** (uno por sección) y ensamblada/verificada en navegador.
