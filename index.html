@@ -312,6 +312,9 @@ a:focus-visible, button:focus-visible {
 .sabor-media{border-radius:12px;aspect-ratio:1/1;overflow:hidden;background:var(--pink-light);}
 .sabor-media img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .45s ease;}
 .sabor-card:hover .sabor-media img{transform:scale(1.06);}
+/* Variante para fotos recortadas (sin fondo): vasito flotante estilo prototipo */
+.sabor-media--cutout{background:radial-gradient(85% 85% at 50% 40%, #fff4f8 0%, var(--pink-light) 72%);}
+.sabor-media--cutout img{object-fit:contain;padding:9%;filter:drop-shadow(0 14px 16px rgba(83,44,49,.16));}
 .sabor-nombre{font-family:var(--font-sans);font-size:16.5px;font-weight:700;color:var(--ink);margin:16px 0 12px;}
 @media (max-width:992px){
   .sabores-grid{grid-template-columns:repeat(2,1fr);}
@@ -843,8 +846,8 @@ a:focus-visible, button:focus-visible {
         </a>
       </article>
       <article class="sabor-card">
-        <div class="sabor-media">
-          <img src="assets/oreo.jpg" alt="Helado de Oreo" width="1024" height="1024" loading="lazy">
+        <div class="sabor-media sabor-media--cutout">
+          <img src="assets/vasito-oreo.webp" alt="Helado de Oreo" width="1024" height="1024" loading="lazy">
         </div>
         <h3 class="sabor-nombre">Oreo</h3>
         <a class="btn btn-sm" href="https://wa.me/584125863169?text=Quiero%20un%20helado%20de%20Oreo" target="_blank" rel="noopener" aria-label="Pedir helado de Oreo por WhatsApp">
@@ -863,8 +866,8 @@ a:focus-visible, button:focus-visible {
         </a>
       </article>
       <article class="sabor-card">
-        <div class="sabor-media">
-          <img src="assets/cafe.jpg" alt="Helado de Café" width="1024" height="1024" loading="lazy">
+        <div class="sabor-media sabor-media--cutout">
+          <img src="assets/vasito-cafe.webp" alt="Helado de Café" width="1024" height="1024" loading="lazy">
         </div>
         <h3 class="sabor-nombre">Café</h3>
         <a class="btn btn-sm" href="https://wa.me/584125863169?text=Quiero%20un%20helado%20de%20Caf%C3%A9" target="_blank" rel="noopener" aria-label="Pedir helado de Café por WhatsApp">

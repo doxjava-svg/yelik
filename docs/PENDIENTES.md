@@ -14,6 +14,8 @@ Tareas abiertas que necesitan **datos del dueño** o son mejoras opcionales.
 
 ## 🔴 Necesita tu confirmación / datos
 
+- [ ] **Recortes de los 6 sabores restantes** (Ron Pasas, Coco, Fresa, Chocolate, Parchita, Galleta) para completar el catálogo estilo prototipo. **IMPORTANTE al exportar:** descargar el **PNG transparente real**, no la vista previa — si se ve el patrón de cuadritos grises al abrir el archivo, está mal exportado. Los de Oreo y Café se rescataron por software, pero un PNG bien exportado da bordes perfectos (vale la pena re-exportar también el de Oreo, que perdió la cúpula de la tapa).
+
 - [ ] **URL de TikTok.** El ícono ya está en el footer en modo "próximamente" (sin enlace). Cuando exista la cuenta, pasar la URL: en `index.html` hay que cambiar el `<span class="ft-social-soon">` por `<a href="URL" target="_blank" rel="noopener">` y quitar la clase.
 - [ ] **Precios.** Por indicación del dueño **NO** se muestran precios por ahora. Reactivar si se decide agregarlos a las tarjetas de sabor.
 - [ ] **Dominio real.** Reemplazar `TU-DOMINIO.com` en el `<head>` (etiquetas `canonical` y `og:image`) por el dominio definitivo.

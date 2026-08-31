@@ -6,6 +6,17 @@ El formato sigue un estilo tipo *Keep a Changelog*. Las fechas están en formato
 
 ---
 
+## [2.2.0] — 2026-08-31
+
+Catálogo: primeras tarjetas con **vasito recortado estilo prototipo** (Oreo y Café).
+
+- **Hallazgo:** los archivos de `assets/assets 2/` (oreo.png, cafe.png) **no tenían transparencia real** — eran RGB 100% opacos con el patrón de cuadros del editor **pintado en los píxeles** (se exportó la vista previa, no el PNG transparente).
+- **Rescate por software:** se eliminó el patrón con detección de píxeles neutros + relleno por inundación desde los bordes (scipy), que solo borra lo conectado al fondo y protege el helado blanco del interior. Café quedó impecable; Oreo aceptable (el borde superior perdió la cúpula transparente, imposible de recuperar).
+- **Nuevos assets:** `assets/vasito-oreo.webp` (86 KB) y `assets/vasito-cafe.webp` (65 KB) — 1024×1024, recortados, cuadrados y con alfa real.
+- **Nueva variante de tarjeta** `.sabor-media--cutout`: vasito flotante con `object-fit: contain`, degradado radial rosa suave y sombra de apoyo — como las tarjetas del prototipo. Las tarjetas Oreo y Café ya la usan; las otras 6 siguen con foto hasta tener sus recortes.
+
+---
+
 ## [2.1.0] — 2026-08-31
 
 Datos de contacto confirmados contra el **sello de marca** del producto (la etiqueta circular azul que llevan los vasitos).
