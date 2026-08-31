@@ -1,0 +1,1265 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Yelikshop — Helados caseros en vasito, cremosos y hechos con amor.">
+<title>Yelikshop | Helados Caseros</title>
+
+<!-- Favicon / color de marca -->
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta name="theme-color" content="#ef5c89">
+
+<!-- SEO: reemplaza TU-DOMINIO.com por tu dominio real cuando publiques -->
+<link rel="canonical" href="https://TU-DOMINIO.com/">
+
+<!-- Open Graph: cómo se ve el enlace al compartirlo en WhatsApp / Instagram / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yelikshop | Helados Caseros en Vasito">
+<meta property="og:description" content="Helados caseros, cremosos y hechos con amor. Pide el tuyo por WhatsApp.">
+<meta property="og:image" content="https://TU-DOMINIO.com/assets/fresa.jpg">
+<meta property="og:locale" content="es_VE">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink: #ef5c89;
+  --pink-hover: #d94573;
+  --pink-light: #fce8ef;
+  --pink-soft: #fddfe8;
+  --cream: #faf5f2;
+  --cream-card: #fff9f6;
+  --ink: #3a2b25;
+  --muted: #786963;
+  --line: #f2dce3;
+  --white: #ffffff;
+  --shadow-sm: 0 4px 15px rgba(83, 44, 49, 0.05);
+  --shadow-md: 0 12px 30px rgba(83, 44, 49, 0.08);
+  --shadow-lg: 0 20px 45px rgba(83, 44, 49, 0.12);
+  --max-width: 1140px;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.container {
+  width: min(90%, var(--max-width));
+  margin: 0 auto;
+}
+
+/* ==================== BUTTONS ==================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--pink);
+  color: var(--white);
+  padding: 12px 24px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 0 6px 18px rgba(239, 92, 137, 0.25);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--pink-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(239, 92, 137, 0.35);
+}
+
+.btn svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.btn.alt {
+  background: var(--white);
+  color: var(--pink);
+  border: 1px solid var(--line);
+  box-shadow: none;
+}
+
+.btn.alt:hover {
+  background: var(--pink-light);
+  border-color: var(--pink);
+}
+
+/* ==================== HEADER ==================== */
+header {
+  height: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 100;
+}
+
+.logo {
+  width: auto;
+  max-width: 250px;
+  height: 68px;
+  object-fit: contain;
+}
+
+nav {
+  display: flex;
+  gap: 36px;
+}
+
+nav a {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.85;
+}
+
+nav a:hover {
+  color: var(--pink);
+  opacity: 1;
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: var(--pink);
+  cursor: pointer;
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero {
+  position: relative;
+  padding: 40px 0 70px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(42px, 5.2vw, 68px);
+  line-height: 1.05;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+h1 em {
+  font-style: italic;
+  color: var(--pink);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.heart-doodle {
+  width: 28px;
+  height: 28px;
+  stroke: var(--pink);
+  fill: none;
+  display: inline-block;
+}
+
+.hero-copy {
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 440px;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+
+.hero-photo-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-photo-bg {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  background: #fce8ef;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.hero-photo-wrap img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Trust Badges */
+.trust-badges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding-top: 15px;
+  border-top: 1px dashed #eed5dd;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trust-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fce8ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pink);
+  flex-shrink: 0;
+}
+
+.trust-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--pink);
+  fill: none;
+  stroke-width: 2;
+}
+
+.trust-text {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+/* ==================== DIVIDER ==================== */
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 60px 0 25px;
+}
+
+.divider-line {
+  height: 1px;
+  width: 70px;
+  background: linear-gradient(90deg, transparent, #e8cbd4, transparent);
+}
+
+.divider-heart {
+  color: var(--pink);
+  width: 22px;
+  height: 22px;
+}
+
+/* ==================== SABORES SECTION ==================== */
+.section {
+  padding: 40px 0 70px;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.heading .kicker {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 6px;
+}
+
+.heading h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.heading p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.flavors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.flavor-card {
+  background: var(--cream-card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 14px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flavor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: #ebd0d8;
+}
+
+.flavor-img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  background: #fbf0f4;
+}
+
+.flavor-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.flavor-card:hover .flavor-img-wrap img {
+  transform: scale(1.04);
+}
+
+.flavor-card h3 {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.flavor-card .btn {
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 12px;
+}
+
+/* ==================== ABOUT SECTION ==================== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 60px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.about-left .kicker {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 8px;
+}
+
+.about-left h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 3.8vw, 42px);
+  line-height: 1.1;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.about-left h2 em {
+  font-style: italic;
+  color: var(--pink);
+}
+
+.about-left p {
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.feature-ico {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pink);
+}
+
+.feature-ico svg {
+  width: 48px;
+  height: 48px;
+  stroke: var(--pink);
+  fill: none;
+  stroke-width: 1.2;
+}
+
+.feature-info strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.feature-info span {
+  font-size: 12px;
+  color: var(--ink);
+  opacity: 0.8;
+  line-height: 1.4;
+  display: block;
+}
+
+/* ==================== CTA BANNER ==================== */
+.cta-section {
+  position: relative;
+  padding: 100px 0;
+  margin-top: 40px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.cta-wave-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.cta-wave-bg svg {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.cta-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.cta-image {
+  flex: 0 0 280px;
+  max-width: 100%;
+}
+
+.cta-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.12));
+}
+
+.cta-text {
+  flex: 1;
+  max-width: 480px;
+  text-align: left;
+}
+
+.cta-text h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 4.5vw, 48px);
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.cta-text p {
+  color: var(--ink);
+  font-size: 16px;
+  margin-bottom: 28px;
+}
+
+.cta-text .btn {
+  padding: 14px 32px;
+  font-size: 14px;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+  margin-top: 0;
+  background: transparent;
+  padding: 60px 0 25px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 36px;
+  margin-bottom: 40px;
+}
+
+.footer-brand .footer-logo {
+  width: auto;
+  max-width: 230px;
+  height: 62px;
+  object-fit: contain;
+  margin-bottom: 14px;
+}
+
+.footer-brand p {
+  font-size: 13px;
+  color: var(--ink);
+  opacity: 0.8;
+  max-width: 260px;
+  line-height: 1.5;
+}
+
+.brand-line {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 200px;
+}
+.brand-line::before {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: rgba(239, 92, 137, 0.4);
+}
+.brand-line svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: var(--pink);
+  stroke-width: 1.5;
+}
+
+.footer-col-title {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.footer-col p, .footer-col a {
+  font-size: 13px;
+  color: var(--ink);
+  opacity: 0.8;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.footer-col a:hover {
+  color: var(--pink);
+  opacity: 1;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--pink);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  background: var(--pink-hover);
+}
+
+.social-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: var(--ink);
+  opacity: 0.7;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .hero-copy {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .trust-badges {
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .flavors-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .cta-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .cta-image {
+    flex: 0 0 auto;
+    width: 220px;
+  }
+
+  .cta-text {
+    text-align: center;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 15px;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: var(--shadow-lg);
+    display: none;
+    text-align: center;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  header .btn-header {
+    display: none;
+  }
+
+  .trust-badges {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .trust-item {
+    justify-content: center;
+  }
+
+  .about-box {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flavors-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .flavor-card {
+    padding: 10px;
+  }
+
+  .flavor-card h3 {
+    font-size: 15px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+/* ==================== ACCESIBILIDAD ==================== */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  z-index: 1000;
+  background: var(--pink);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 0 0 12px 0;
+  font-weight: 700;
+  font-size: 13px;
+}
+.skip-link:focus { left: 0; }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--pink);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ==================== CÓMO PEDIR ==================== */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+.step {
+  background: var(--cream-card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 34px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+.step-num {
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--pink);
+  color: #fff;
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step h3 {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.step p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* ==================== BOTÓN FLOTANTE WHATSAPP ==================== */
+.wa-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 200;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 26px rgba(37, 211, 102, 0.45);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.wa-float:hover {
+  transform: scale(1.08);
+  background: #1fb457;
+}
+.wa-float svg { width: 34px; height: 34px; fill: currentColor; }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#inicio">Saltar al contenido</a>
+
+<!-- HEADER -->
+<header class="container">
+  <a href="#inicio">
+    <img class="logo" src="assets/logo.png" alt="Yelikshop — Helados Caseros" width="560" height="182">
+  </a>
+  
+  <nav id="nav-menu">
+    <a href="#inicio">Inicio</a>
+    <a href="#sabores">Sabores</a>
+    <a href="#nosotros">Sobre Nosotros</a>
+    <a href="#pedidos">Pedidos</a>
+  </nav>
+
+  <a class="btn btn-header" href="https://wa.me/584125863169?text=Hola%20Yelikshop%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793 0-.853.448-1.273.607-1.446.159-.173.346-.217.462-.217.116 0 .231.001.332.006.109.005.255-.041.398.303.144.346.491 1.197.534 1.284.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.101-.177.212-.077.385.101.173.446.736.958 1.192.658.586 1.213.767 1.386.853.173.087.275.072.376-.043.101-.116.433-.506.549-.679.116-.173.231-.144.39-.087.159.058 1.01.477 1.183.563.173.087.289.13.332.202.043.072.043.419-.101.824z"/></svg>
+    Pedir Ahora
+  </a>
+
+  <button class="menu-toggle" id="menu-btn" aria-label="Abrir Menú" aria-expanded="false">☰</button>
+</header>
+
+<!-- MAIN CONTENT -->
+<main id="inicio" tabindex="-1">
+  
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Helados caseros en vasito</div>
+        <h1>
+          Helados caseros<br>
+          que saben a<br>
+          <em>
+            hecho con amor.
+            <svg class="heart-doodle" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </em>
+        </h1>
+        <p class="hero-copy">Cremosos, deliciosos y preparados para endulzar tu día.</p>
+        
+        <div class="hero-actions">
+          <a class="btn" href="#sabores">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"/></svg>
+            Ver Sabores
+          </a>
+          <a class="btn alt" href="#como-pedir">Cómo Pedir</a>
+        </div>
+
+        <div class="trust-badges">
+          <div class="trust-item">
+            <div class="trust-icon">
+              <!-- Icono: ingredientes de calidad -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            </div>
+            <div class="trust-text">Ingredientes<br>de calidad</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">
+              <!-- Bowl Icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-9 9h18a9 9 0 0 0-9-9zm-7 11v1a5 5 0 0 0 5 5h4a5 5 0 0 0 5-5v-1H5z"/></svg>
+            </div>
+            <div class="trust-text">Preparación<br>100% casera</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">
+              <!-- Heart Icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </div>
+            <div class="trust-text">Hechos con amor<br>para ti</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-bg"></div>
+        <img src="assets/fresa.jpg" alt="Helado casero de fresa Yelikshop" width="1024" height="1024" fetchpriority="high">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION DIVIDER -->
+  <div class="section-divider">
+    <span class="divider-line"></span>
+    <svg class="divider-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <span class="divider-line"></span>
+  </div>
+
+  <!-- SABORES SECTION -->
+  <section class="section" id="sabores">
+    <div class="container">
+      <div class="heading">
+        <div class="kicker">Nuestros Sabores</div>
+        <h2>Uno para cada antojo.</h2>
+        <p>Descubre nuestros sabores caseros y elige tu favorito.</p>
+      </div>
+
+      <div class="flavors-grid">
+        <!-- Card 1 -->
+        <article class="flavor-card">
+          <div class="flavor-img-wrap">
+            <img src="assets/ron-pasas.jpg" alt="Helado de Ron Pasas" loading="lazy">
+          </div>
+          <h3>Ron Pasas</h3>
+          <a class="btn" href="https://wa.me/584125863169?text=Quiero%20un%20helado%20de%20Ron%20Pasas" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793 0-.853.448-1.273.607-1.446.159-.173.346-.217.462-.217.116 0 .231.001.332.006.109.005.255-.041.398.303.144.346.491 1.197.534 1.284.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.101-.177.212-.077.385.101.173.446.736.958 1.192.658.586 1.213.767 1.386.853.173.087.275.072.376-.043.101-.116.433-.506.549-.679.116-.173.231-.144.39-.087.159.058 1.01.477 1.183.563.173.087.289.13.332.202.043.072.043.419-.101.824z"/></svg>
+            Pedir
+          </a>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="flavor-card">
+          <div class="flavor-img-wrap">
+            <img src="assets/coco.jpg" alt="Helado de Coco" loading="lazy">
+          </div>
+          <h3>Coco</h3>
+          <a class="btn" href="https://wa.me/584125863169?text=Quiero%20un%20helado%20de%20Coco" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793 0-.853.448-1.273.607-1.446.159-.173.346-.217.462-.217.116 0 .231.001.332.006.109.005.255-.041.398.303.144.346.491 1.197.534 1.284.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.101-.177.212-.077.385.101.173.446.736.958 1.192.658.586 1.213.767 1.386.853.173.087.275.072.376-.043.101-.116.433-.506.549-.679.116-.173.231-.144.39-.087.159.058 1.01.477 1.183.563.173.087.289.13.332.202.043.072.043.419-.101.824z"/></svg>
+            Pedir
+          </a>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="flavor-card">
+          <div class="flavor-img-wrap">
+            <img src="assets/fresa.jpg" alt="Helado de Fresa" loading="lazy">
+          </div>
+          <h3>Fresa</h3>
+          <a class="btn" href="https://wa.me/584125863169?text=Quiero%20un%20helado%20de%20Fresa" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793 0-.853.448-1.273.607-1.446.159-.173.346-.217.462-.217.116 0 .231.001.332.006.109.005.255-.041.398.303.144.346.491 1.197.534 1.284.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.101-.177.212-.077.385.101.173.446.736.958 1.192.658.586 1.213.767 1.386.853.173.087.275.072.376-.043.101-.116.433-.506.549-.679.116-.173.231-.144.39-.087.159.058 1.01.477 1.183.563.173.087.289.13.332.202.043.072.043.419-.101.824z"/></svg>
+            Pedir
+          </a>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="flavor-card">
+          <div class="flavor-img-wrap">
+            <img src="assets/chocolate.jpg" alt="Helado de Chocolate" loading="lazy">
+          </div>
+          <h3>Chocolate</h3>
+          <a class="btn" href="https://wa.me/584125863169?text=Quiero%20un%20helado%20de%20Chocolate" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793 0-.853.448-1.273.607-1.446.159-.173.346-.217.462-.217.116 0 .231.001.332.006.109.005.255-.041.398.303.144.346.491 1.197.534 1.284.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.101-.177.212-.077.385.101.173.446.736.958 1.192.658.586 1.213.767 1.386.853.173.087.275.072.376-.043.101-.116.433-.506.549-.679.116-.173.231-.144.39-.087.159.058 1.01.477 1.183.563.173.087.289.13.332.202.043.072.043.419-.101.824z"/></svg>
+            Pedir
+          </a>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="flavor-card">
+          <div class="flavor-img-wrap">
+            <img src="assets/oreo.jpg" alt="Helado de Oreo" loading="lazy">
+          </div>
+          <h3>Oreo</h3>
+          <a class="btn" href="https://wa.me/584125863169?text=Quiero%20un%20helado%20de%20Oreo" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793 0-.853.448-1.273.607-1.446.159-.173.346-.217.462-.217.116 0 .231.001.332.006.109.005.255-.041.398.303.144.346.491 1.197.534 1.284.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.101-.177.212-.077.385.101.173.446.736.958 1.192.658.586 1.213.767 1.386.853.173.087.275.072.376-.043.101-.116.433-.506.549-.679.116-.173.231-.144.39-.087.159.058 1.01.477 1.183.563.173.087.289.13.332.202.043.072.043.419-.101.824z"/></svg>
+            Pedir
+          </a>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="flavor-card">
+          <div class="flavor-img-wrap">
+            <img src="assets/parchita.jpg" alt="Helado de Parchita" loading="lazy">
+          </div>
+          <h3>Parchita</h3>
+          <a class="btn" href="https://wa.me/584125863169?text=Quiero%20un%20helado%20de%20Parchita" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793 0-.853.448-1.273.607-1.446.159-.173.346-.217.462-.217.116 0 .231.001.332.006.109.005.255-.041.398.303.144.346.491 1.197.534 1.284.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.101-.177.212-.077.385.101.173.446.736.958 1.192.658.586 1.213.767 1.386.853.173.087.275.072.376-.043.101-.116.433-.506.549-.679.116-.173.231-.144.39-.087.159.058 1.01.477 1.183.563.173.087.289.13.332.202.043.072.043.419-.101.824z"/></svg>
+            Pedir
+          </a>
+        </article>
+
+        <!-- Card 7 -->
+        <article class="flavor-card">
+          <div class="flavor-img-wrap">
+            <img src="assets/cafe.jpg" alt="Helado de Café" loading="lazy">
+          </div>
+          <h3>Café</h3>
+          <a class="btn" href="https://wa.me/584125863169?text=Quiero%20un%20helado%20de%20Café" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793 0-.853.448-1.273.607-1.446.159-.173.346-.217.462-.217.116 0 .231.001.332.006.109.005.255-.041.398.303.144.346.491 1.197.534 1.284.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.101-.177.212-.077.385.101.173.446.736.958 1.192.658.586 1.213.767 1.386.853.173.087.275.072.376-.043.101-.116.433-.506.549-.679.116-.173.231-.144.39-.087.159.058 1.01.477 1.183.563.173.087.289.13.332.202.043.072.043.419-.101.824z"/></svg>
+            Pedir
+          </a>
+        </article>
+
+        <!-- Card 8 -->
+        <article class="flavor-card">
+          <div class="flavor-img-wrap">
+            <img src="assets/galleta.jpg" alt="Helado de Galleta" loading="lazy">
+          </div>
+          <h3>Galleta</h3>
+          <a class="btn" href="https://wa.me/584125863169?text=Quiero%20un%20helado%20de%20Galleta" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793 0-.853.448-1.273.607-1.446.159-.173.346-.217.462-.217.116 0 .231.001.332.006.109.005.255-.041.398.303.144.346.491 1.197.534 1.284.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.101-.177.212-.077.385.101.173.446.736.958 1.192.658.586 1.213.767 1.386.853.173.087.275.072.376-.043.101-.116.433-.506.549-.679.116-.173.231-.144.39-.087.159.058 1.01.477 1.183.563.173.087.289.13.332.202.043.072.043.419-.101.824z"/></svg>
+            Pedir
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS SECTION -->
+  <section class="section" id="nosotros">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left">
+            <div class="kicker">El toque casero</div>
+            <h2>Más que helados,<br><em>momentos para compartir. ♡</em></h2>
+            <p>En Yelikshop cada receta se prepara con dedicación, ingredientes seleccionados y ese toque casero que los hace únicos.</p>
+          </div>
+
+          <div class="about-features">
+            <div class="feature-item">
+              <div class="feature-ico">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-9 9h18a9 9 0 0 0-9-9zm-7 11v1a5 5 0 0 0 5 5h4a5 5 0 0 0 5-5v-1H5z"/></svg>
+              </div>
+              <div class="feature-info">
+                <strong>Recetas caseras</strong>
+                <span>Hechas con amor, como en casa.</span>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-ico">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              </div>
+              <div class="feature-info">
+                <strong>Ingredientes de calidad</strong>
+                <span>Seleccionamos lo mejor para cada sabor.</span>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-ico">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"/></svg>
+              </div>
+              <div class="feature-info">
+                <strong>Cremosos y deliciosos</strong>
+                <span>Textura perfecta en cada vasito.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- CÓMO PEDIR -->
+  <section class="section" id="como-pedir">
+    <div class="container">
+      <div class="heading">
+        <div class="kicker">Así de fácil</div>
+        <h2>Cómo pedir</h2>
+        <p>Tu helado favorito en tres pasos.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Elige tu sabor</h3>
+          <p>Explora nuestros sabores caseros y decide cuál se te antoja hoy.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Escríbenos por WhatsApp</h3>
+          <p>Toca el botón “Pedir” y tu antojo nos llega al instante.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Recibe y disfruta</h3>
+          <p>Coordinamos la entrega y endulzamos tu día. ♡</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-section" id="pedidos">
+    <div class="cta-wave-bg">
+      <svg viewBox="0 0 1440 360" preserveAspectRatio="none">
+        <path fill="#fce8ef" d="M0,120 C400,0 800,240 1440,100 L1440,260 C800,360 400,160 0,280 Z" />
+      </svg>
+    </div>
+    <div class="container cta-container">
+      <div class="cta-image">
+        <img src="assets/oreo-cutout.webp" alt="Helado de Oreo Yelikshop" width="640" height="640" loading="lazy">
+      </div>
+      <div class="cta-text">
+        <h2>¿Cuál vas a probar primero?</h2>
+        <p>Haz tu pedido y disfruta tu sabor favorito.</p>
+        <a class="btn" href="https://wa.me/584125863169?text=Hola%20Yelikshop%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793 0-.853.448-1.273.607-1.446.159-.173.346-.217.462-.217.116 0 .231.001.332.006.109.005.255-.041.398.303.144.346.491 1.197.534 1.284.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.101-.177.212-.077.385.101.173.446.736.958 1.192.658.586 1.213.767 1.386.853.173.087.275.072.376-.043.101-.116.433-.506.549-.679.116-.173.231-.144.39-.087.159.058 1.01.477 1.183.563.173.087.289.13.332.202.043.072.043.419-.101.824z"/></svg>
+          HAZ TU PEDIDO
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Yelikshop Helados Caseros Logo" class="footer-logo" width="560" height="182">
+        <p>Helados caseros hechos con amor para endulzar tu día.</p>
+        <div class="brand-line">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Navegación</div>
+        <p><a href="#inicio">Inicio</a></p>
+        <p><a href="#sabores">Sabores</a></p>
+        <p><a href="#nosotros">Sobre nosotros</a></p>
+        <p><a href="#pedidos">Pedidos</a></p>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Contáctanos</div>
+        <p>WhatsApp: +58 412 5863169</p>
+        <p>Instagram: @yelikshop_helados</p>
+        <p>yelikshop.helados@gmail.com</p>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Síguenos</div>
+        <div class="social-links">
+          <a class="social-btn" href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a class="social-btn" href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.592 0 9 1.592 9 4.615V8z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2026</span> Yelikshop. Todos los derechos reservados.</p>
+      <p>Hechos con amor <svg viewBox="0 0 24 24" aria-hidden="true" style="width:12px;height:12px;fill:var(--pink);vertical-align:middle;margin-left:2px;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></p>
+    </div>
+  </div>
+</footer>
+
+<!-- BOTÓN FLOTANTE DE WHATSAPP (siempre visible) -->
+<a class="wa-float" href="https://wa.me/584125863169?text=Hola%20Yelikshop%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener" aria-label="Pedir por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- JAVASCRIPT FOR MOBILE MENU -->
+<script>
+(function() {
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  const menuBtn = document.getElementById('menu-btn');
+  const navMenu = document.getElementById('nav-menu');
+
+  if (!menuBtn || !navMenu) return;
+
+  menuBtn.addEventListener('click', function() {
+    const isOpen = navMenu.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', isOpen);
+    menuBtn.textContent = isOpen ? '✕' : '☰';
+  });
+
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.textContent = '☰';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

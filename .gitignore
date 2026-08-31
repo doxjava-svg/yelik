@@ -1,0 +1,7 @@
+# Paquetes / distribuibles (se mantienen en disco, fuera del control de versiones)
+*.zip
+
+# Temporales del sistema
+Thumbs.db
+desktop.ini
+.DS_Store

@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Yelikshop — helados caseros en vasito, cremosos y hechos con amor.">
+<title>Yelikshop | Helados caseros</title>
+<style>
+:root{
+  --pink:#ef5c89;--pink2:#f9b5ca;--pale:#fff0f5;--cream:#fffaf7;
+  --ink:#3a2b25;--muted:#786963;--line:#f2dce3;--white:#fff;
+  --shadow:0 16px 40px rgba(83,44,49,.10);--max:1180px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+img{display:block;max-width:100%} a{text-decoration:none;color:inherit}
+.container{width:min(92%,var(--max));margin:auto}
+header{height:88px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.logo{width:215px;height:70px;object-fit:contain;object-position:left center}
+nav{display:flex;gap:30px;font-size:13px;color:#514640}
+nav a:hover{color:var(--pink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;background:var(--pink);color:#fff;padding:13px 21px;font-size:13px;font-weight:800;box-shadow:0 8px 20px rgba(239,92,137,.20);transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.hero{position:relative;overflow:hidden;padding:55px 0 70px}
+.hero:after{content:"";position:absolute;z-index:-1;right:-7%;top:35px;width:56%;height:510px;background:#ffe8ef;border-radius:47% 53% 50% 50%/40% 37% 63% 60%;transform:rotate(-3deg)}
+.hero-grid{display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:35px}
+.eyebrow,.kicker{font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--pink)}
+h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:500}
+h1{font-size:clamp(48px,6vw,78px);line-height:.98;letter-spacing:-.045em;margin:14px 0 25px}
+h1 em{font-style:italic;color:var(--pink)}
+.hero-copy{max-width:480px;color:var(--muted);font-size:17px;line-height:1.6}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:27px 0 30px}
+.btn.alt{background:#fff;color:var(--pink);box-shadow:none;border:1px solid var(--line)}
+.hero-photo{position:relative;display:grid;place-items:center}
+.hero-photo .circle{position:absolute;width:450px;height:450px;border-radius:50%;background:#ffe7ee}
+.hero-photo img{position:relative;width:min(100%,540px);aspect-ratio:1/1;object-fit:cover;border-radius:30px;box-shadow:var(--shadow)}
+.trust{display:flex;gap:28px;flex-wrap:wrap;font-size:12px;color:#62534c}
+.trust div{display:flex;align-items:center;gap:8px}
+.trust b{color:var(--pink);font-size:20px}
+.section{padding:70px 0}
+.heading{text-align:center;margin-bottom:35px}
+.heading h2{font-size:47px;margin:9px 0 8px}
+.heading p{max-width:580px;margin:auto;color:var(--muted)}
+.flavors{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 8px 25px rgba(83,44,49,.05);transition:.2s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.card img{width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--pale)}
+.card-body{text-align:center;padding:12px 10px 18px}
+.card h3{font-family:Georgia,serif;font-size:19px;margin:0 0 11px}
+.card .btn{padding:9px 19px;font-size:12px;box-shadow:none}
+.about{background:linear-gradient(135deg,#fff1f5,#ffe8ef);border:1px solid var(--line);border-radius:28px;padding:42px;display:grid;grid-template-columns:1.1fr 1fr;gap:35px;align-items:center}
+.about h2{font-size:42px;line-height:1.05;margin:10px 0 15px}.about h2 em{color:var(--pink)}
+.about p{color:var(--muted);line-height:1.6}
+.flyer{width:165px;margin-top:20px;border-radius:16px;box-shadow:var(--shadow)}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.feature{padding:22px 12px;text-align:center;border-left:1px solid #efcbd6}
+.feature .ico{font-size:30px;color:var(--pink);margin-bottom:8px}.feature strong{display:block;font-family:Georgia,serif;font-size:16px}.feature span{font-size:11px;color:var(--muted)}
+.cta{margin-top:42px;min-height:280px;border-radius:32px;overflow:hidden;background:#fddfe8;display:grid;grid-template-columns:.9fr 1.1fr;align-items:center}
+.cta-img{height:100%;min-height:280px}.cta-img img{width:100%;height:100%;object-fit:cover}
+.cta-copy{padding:35px 55px}.cta-copy h2{font-size:48px;margin:8px 0}.cta-copy p{color:var(--muted)}
+footer{margin-top:70px;padding:45px 0 20px;border-top:1px solid var(--line)}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px}
+.footer-logo{width:205px;height:60px;object-fit:contain;object-position:left}
+.footer-title{font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+footer p,footer a{font-size:12px;color:var(--muted)}
+.social{display:flex;gap:10px}.social a{width:38px;height:38px;border-radius:50%;background:var(--pink);color:#fff;display:grid;place-items:center;font-weight:900}
+.copy{border-top:1px solid var(--line);margin-top:28px;padding-top:14px;display:flex;justify-content:space-between;color:#9b8780;font-size:10px}
+.menu{display:none}
+@media(max-width:900px){
+ nav{display:none}.menu{display:block;border:1px solid var(--line);background:#fff;border-radius:50%;width:42px;height:42px}
+ .hero-grid,.about,.cta{grid-template-columns:1fr}
+ .hero:after{width:95%;right:-30%;top:480px}.hero-photo{margin-top:25px}
+ .flavors{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:1fr}
+ .feature{border-left:0;border-top:1px solid #efcbd6}
+ .cta-img{min-height:220px}.cta-copy{padding:30px}
+ .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+ header{height:72px}.logo{width:175px;height:55px}.container{width:94%}
+ .hero{padding:35px 0 48px}h1{font-size:47px}.hero-copy{font-size:15px}
+ .hero-photo img{border-radius:23px}.hero-photo .circle{width:320px;height:320px}
+ .trust{gap:13px}.trust div{font-size:10px}.section{padding:52px 0}
+ .heading h2{font-size:37px}.flavors{gap:9px}.card h3{font-size:16px}
+ .card .btn{padding:8px 14px}.about{padding:25px}.about h2{font-size:35px}
+ .cta-copy h2{font-size:38px}.footer-grid{grid-template-columns:1fr}
+ .copy{flex-direction:column;gap:7px}
+}
+</style>
+
+<style id="mobile-final-overrides">
+  body{overflow-x:hidden}
+  header.container{
+    height:68px;
+    width:calc(100% - 28px);
+    position:relative;
+  }
+  header .logo{width:170px;height:54px}
+  header .btn{display:none}
+  nav{
+    position:absolute;
+    top:62px;
+    left:0;
+    right:0;
+    display:none;
+    flex-direction:column;
+    gap:0;
+    background:rgba(255,255,255,.98);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:8px;
+    box-shadow:var(--shadow);
+    z-index:20;
+  }
+  nav.open{display:flex}
+  nav a{padding:13px 14px;border-radius:12px}
+  nav a:hover{background:var(--pale)}
+  .menu{display:grid;place-items:center;color:var(--pink);font-size:19px;cursor:pointer}
+
+  .hero{padding:30px 0 42px}
+  .hero:after{
+    width:115%;height:330px;right:-42%;top:390px;
+    border-radius:50%;
+  }
+  .hero-grid{display:flex;flex-direction:column;gap:22px}
+  .hero-grid>div:first-child{width:100%}
+  .eyebrow{font-size:10px}
+  h1{
+    font-size:44px;
+    line-height:.99;
+    letter-spacing:-.04em;
+    margin:10px 0 18px;
+  }
+  .hero-copy{font-size:15px;line-height:1.55;max-width:330px}
+  .actions{margin:21px 0 24px;gap:9px}
+  .actions .btn{padding:12px 17px}
+  .trust{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:7px;
+    width:100%;
+  }
+  .trust div{font-size:9px;line-height:1.35;gap:4px}
+  .trust b{font-size:18px}
+  .hero-photo{width:100%;margin-top:5px}
+  .hero-photo .circle{width:300px;height:300px}
+  .hero-photo img{
+    width:100%;max-width:355px;
+    aspect-ratio:1/1;
+    border-radius:24px;
+  }
+
+  .section{padding:48px 0}
+  .heading{margin-bottom:25px}
+  .heading h2{font-size:35px;line-height:1.05;margin:8px 0}
+  .heading p{font-size:13px;padding:0 8px}
+  .flavors{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+  .card{border-radius:15px}
+  .card img{aspect-ratio:1/1}
+  .card-body{padding:10px 7px 13px}
+  .card h3{font-size:16px;margin-bottom:9px}
+  .card .btn{font-size:11px;padding:8px 14px}
+
+  .about{
+    display:flex;
+    flex-direction:column;
+    padding:24px 18px;
+    gap:24px;
+    border-radius:23px;
+  }
+  .about h2{font-size:34px;line-height:1.06}
+  .about p{font-size:13px;line-height:1.55}
+  .flyer{width:135px;margin-top:14px}
+  .features{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:4px;
+  }
+  .feature{padding:12px 5px;border-left:1px solid #efcbd6}
+  .feature:first-child{border-left:0}
+  .feature .ico{font-size:23px;margin-bottom:5px}
+  .feature strong{font-size:12px;line-height:1.15}
+  .feature span{font-size:9px;line-height:1.25}
+
+  .cta{
+    margin-top:22px;
+    display:flex;
+    flex-direction:column;
+    border-radius:23px;
+  }
+  .cta-img{width:100%;height:225px;min-height:0}
+  .cta-copy{padding:25px 20px 28px;text-align:center}
+  .cta-copy h2{font-size:36px;line-height:1.03;margin:8px 0}
+  .cta-copy p{font-size:13px}
+  .cta-copy .btn{width:100%}
+
+  footer{margin-top:45px;padding:34px 0 16px}
+  .footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px 18px}
+  .footer-grid>div:first-child{grid-column:1/-1}
+  .footer-logo{width:175px;height:55px}
+  footer p,footer a{font-size:11px;line-height:1.45}
+  .footer-title{font-size:10px}
+  .social a{width:35px;height:35px}
+  .copy{font-size:9px;text-align:center;align-items:center}
+
+  @media (min-width:600px) and (max-width:900px){
+    header.container{width:92%}
+    .hero{padding-top:45px}
+    h1{font-size:56px}
+    .hero-grid{gap:35px}
+    .hero-photo img{max-width:470px}
+    .flavors{grid-template-columns:repeat(4,1fr)}
+    .about{padding:34px}
+    .cta{flex-direction:row}
+    .cta-img{width:48%;height:auto;min-height:260px}
+    .cta-copy{width:52%;text-align:left}
+  }
+</style>
+
+</head>
+<body>
+<header class="container">
+  <a href="#inicio"><img class="logo" src="assets/logo.png" alt="Yelikshop — Helados Caseros"></a>
+  <nav>
+    <a href="#inicio">Inicio</a><a href="#sabores">Sabores</a><a href="#nosotros">Sobre nosotros</a><a href="#pedidos">Pedidos</a>
+  </nav>
+  <a class="btn" href="https://wa.me/584725863169?text=Hola%20Yelikshop%2C%20quiero%20hacer%20un%20pedido." target="_blank">◉ Pedir ahora</a>
+  <button class="menu" aria-label="Abrir menú" aria-expanded="false">☰</button>
+</header>
+
+<main id="inicio">
+<section class="hero">
+<div class="container hero-grid">
+  <div>
+    <div class="eyebrow">Helados caseros en vasito</div>
+    <h1>Helados caseros<br>que saben a<br><em>hecho con amor.</em> ♡</h1>
+    <p class="hero-copy">Cremosos, deliciosos y preparados para endulzar tu día.</p>
+    <div class="actions"><a class="btn" href="#sabores">🍨 Ver sabores</a><a class="btn alt" href="#pedidos">Cómo pedir</a></div>
+    <div class="trust"><div><b>♧</b>Ingredientes<br>de calidad</div><div><b>♨</b>Preparación<br>100% casera</div><div><b>♡</b>Hechos con amor<br>para ti</div></div>
+  </div>
+  <div class="hero-photo"><div class="circle"></div><img src="assets/fresa.jpg" alt="Helado casero de fresa"></div>
+</div>
+</section>
+
+<section class="section" id="sabores">
+<div class="container">
+  <div class="heading"><div class="kicker">Nuestros sabores</div><h2>Uno para cada antojo.</h2><p>Descubre nuestros sabores caseros y elige tu favorito.</p></div>
+  <div class="flavors">
+    <article class="card"><img src="assets/ron-pasas.jpg" alt="Ron Pasas"><div class="card-body"><h3>Ron Pasas</h3><a class="btn" href="https://wa.me/584725863169?text=Quiero%20un%20helado%20de%20Ron%20Pasas" target="_blank">◉ Pedir</a></div></article>
+    <article class="card"><img src="assets/coco.jpg" alt="Coco"><div class="card-body"><h3>Coco</h3><a class="btn" href="https://wa.me/584725863169?text=Quiero%20un%20helado%20de%20Coco" target="_blank">◉ Pedir</a></div></article>
+    <article class="card"><img src="assets/fresa.jpg" alt="Fresa"><div class="card-body"><h3>Fresa</h3><a class="btn" href="https://wa.me/584725863169?text=Quiero%20un%20helado%20de%20Fresa" target="_blank">◉ Pedir</a></div></article>
+    <article class="card"><img src="assets/chocolate.jpg" alt="Chocolate"><div class="card-body"><h3>Chocolate</h3><a class="btn" href="https://wa.me/584725863169?text=Quiero%20un%20helado%20de%20Chocolate" target="_blank">◉ Pedir</a></div></article>
+    <article class="card"><img src="assets/oreo.jpg" alt="Oreo"><div class="card-body"><h3>Oreo</h3><a class="btn" href="https://wa.me/584725863169?text=Quiero%20un%20helado%20de%20Oreo" target="_blank">◉ Pedir</a></div></article>
+    <article class="card"><img src="assets/parchita.jpg" alt="Parchita"><div class="card-body"><h3>Parchita</h3><a class="btn" href="https://wa.me/584725863169?text=Quiero%20un%20helado%20de%20Parchita" target="_blank">◉ Pedir</a></div></article>
+    <article class="card"><img src="assets/cafe.jpg" alt="Café"><div class="card-body"><h3>Café</h3><a class="btn" href="https://wa.me/584725863169?text=Quiero%20un%20helado%20de%20Café" target="_blank">◉ Pedir</a></div></article>
+    <article class="card"><img src="assets/galleta.jpg" alt="Galleta"><div class="card-body"><h3>Galleta</h3><a class="btn" href="https://wa.me/584725863169?text=Quiero%20un%20helado%20de%20Galleta" target="_blank">◉ Pedir</a></div></article>
+  </div>
+</div>
+</section>
+
+<section class="section" id="nosotros">
+<div class="container">
+  <div class="about">
+    <div><div class="kicker">El toque casero</div><h2>Más que helados,<br><em>momentos para compartir.</em> ♡</h2><p>En Yelikshop cada receta se prepara con dedicación, ingredientes seleccionados y ese toque casero que los hace únicos.</p><img class="flyer" src="assets/flyer.jpg" alt="Productos Yelikshop"></div>
+    <div class="features">
+      <div class="feature"><div class="ico">♨</div><strong>Recetas caseras</strong><span>Hechas con amor, como en casa.</span></div>
+      <div class="feature"><div class="ico">♧</div><strong>Ingredientes de calidad</strong><span>Seleccionamos lo mejor para cada sabor.</span></div>
+      <div class="feature"><div class="ico">♡</div><strong>Cremosos y deliciosos</strong><span>Textura perfecta en cada vasito.</span></div>
+    </div>
+  </div>
+
+  <div class="cta" id="pedidos">
+    <div class="cta-img"><img src="assets/oreo.jpg" alt="Helado de Oreo Yelikshop"></div>
+    <div class="cta-copy"><div class="kicker">Tu próximo antojo</div><h2>¿Cuál vas a probar primero?</h2><p>Haz tu pedido y disfruta tu sabor favorito.</p><a class="btn" href="https://wa.me/584725863169?text=Hola%20Yelikshop%2C%20quiero%20hacer%20un%20pedido." target="_blank">◉ Haz tu pedido</a></div>
+  </div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+  <div class="footer-grid">
+    <div><img class="footer-logo" src="assets/logo.png" alt="Yelikshop"><p>Helados caseros hechos con amor para endulzar tu día.</p></div>
+    <div><div class="footer-title">Navegación</div><p><a href="#inicio">Inicio</a></p><p><a href="#sabores">Sabores</a></p><p><a href="#nosotros">Sobre nosotros</a></p><p><a href="#pedidos">Pedidos</a></p></div>
+    <div><div class="footer-title">Contáctanos</div><p>WhatsApp: +58 472 5863169</p><p>Instagram: @yelikshop_helados</p><p>yelikshop.helados@gmail.com</p></div>
+    <div><div class="footer-title">Síguenos</div><div class="social"><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="Facebook">f</a></div></div>
+  </div>
+  <div class="copy"><span>© 2026 Yelikshop. Todos los derechos reservados.</span><span>Hechos con amor ♡</span></div>
+</div>
+</footer>
+
+<script>
+(function(){
+  const menu = document.querySelector('.menu');
+  const nav = document.querySelector('nav');
+  if(!menu || !nav) return;
+  menu.addEventListener('click', function(){
+    nav.classList.toggle('open');
+    menu.setAttribute('aria-expanded', nav.classList.contains('open'));
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+})();
+</script>
+
+</body>
+</html>
