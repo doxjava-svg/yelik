@@ -14,6 +14,13 @@ Datos de contacto confirmados contra el **sello de marca** del producto (la etiq
 - **Enlaces de Instagram reales:** el texto de contacto y el botón social del footer ahora apuntan a `https://www.instagram.com/yelik_shop` (antes `href="#"`), con `target="_blank"` y `rel="noopener"`.
 - **Número de WhatsApp validado:** el sello muestra `+58 412 5863169`, lo que **confirma** la corrección `472` → `412` hecha en la v1.0.0.
 
+### CTA: logo vertical en lugar de la foto
+
+- La imagen del CTA final (foto de Oreo con fondo de mármol, que desentonaba sobre la ola rosa) se reemplazó por el **logo vertical de la marca** (círculo YS + wordmark), a pedido del dueño.
+- Nuevo asset: `assets/logo-vertical.webp` (640×564, 85 KB, con transparencia) — extraído del logo original que venía en `yelikshop_landing_final.zip` (resultó ser el mismo archivo que "ChatGPT Image … (2).png": tiene fondo transparente, no gris), recortado al contenido y convertido a WebP.
+- Se suavizó el `drop-shadow` del CTA (estaba calibrado para la foto; en un logo de trazos finos se veía sucio).
+- `assets/oreo-cutout.webp` y `assets/oreo-cutout.png` quedaron **sin uso** en la página.
+
 ### Redes del footer reorganizadas
 
 - **Facebook eliminado** (no existe la página).

@@ -23,7 +23,7 @@ Tareas abiertas que necesitan **datos del dueño** o son mejoras opcionales.
 
 - [ ] **Auto-alojar las tipografías de Google** dentro de `assets/fonts/` para que la página **no haga peticiones externas** (100% autónoma/offline).
 - [ ] **Optimizar los 8 JPG de sabores** (≈67–83 KB c/u) a WebP para bajar aún más el peso total.
-- [ ] **Borrar archivos no usados** de `assets/` si se confirma que son basura de trabajo: `ChatGPT Image ....png`, `test_crop.png`, y el `oreo-cutout.png` (496 KB) que ya no referencia la página.
+- [ ] **Borrar archivos no usados** de `assets/` si se confirma que son basura de trabajo: `ChatGPT Image ....png` (la (2) ya se aprovechó como fuente de `logo-vertical.webp`), `test_crop.png`, `oreo-cutout.png` y `oreo-cutout.webp` (ambos sin uso desde que el CTA muestra el logo vertical).
 - [ ] **Subir a GitHub** (hacer `push`) si se quiere respaldo remoto o publicar con GitHub Pages.
 
 ## 📌 Notas
