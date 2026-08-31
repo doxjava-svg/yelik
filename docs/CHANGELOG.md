@@ -6,6 +6,36 @@ El formato sigue un estilo tipo *Keep a Changelog*. Las fechas están en formato
 
 ---
 
+## [2.0.0] — 2026-08-31
+
+Reconstrucción completa del landing **fiel al prototipo de diseño** (`Prototipo.png`), construida con un workflow de **6 agentes en paralelo** (uno por sección) y ensamblada/verificada en navegador.
+
+### Qué cambió
+
+- **Página reescrita sección por sección siguiendo el prototipo:**
+  - **Header**: logo real + nav (Inicio/Sabores/Sobre nosotros/Pedidos) + botón "Pedir ahora"; menú hamburguesa en móvil.
+  - **Hero**: eyebrow, título serif con *"hecho con amor."* en itálica rosa + corazón doodle, línea decorativa, **un solo botón "Ver Sabores"** (como el prototipo), 3 badges de confianza con íconos de línea, y foto de fresa con **máscara orgánica tipo blob** sobre mancha rosa + corazón flotante.
+  - **Divisor ornamental** caligráfico con corazón entre hero y sabores.
+  - **Sabores**: solo el título "NUESTROS SABORES" (sin subtítulo, como el mock), 8 tarjetas blancas con botón píldora pequeño "Pedir".
+  - **Sobre nosotros**: banda rosa (#fbe3ec) con kicker "EL TOQUE CASERO", título serif y 3 features con separadores verticales e íconos de línea (olla con corazones, ramita, cuchara).
+  - **CTA**: continúa la banda rosa, con ola rosa profunda detrás del contenido, vasito de Oreo recortado y "¿Cuál vas a probar primero?"; transición de ola hacia el footer.
+  - **Footer**: fondo blanco, 4 columnas (marca+doodle, Navegación, Contáctanos con íconos, Síguenos con botones circulares) y barra inferior.
+- **Todos los íconos son SVG inline** de estilo línea (stroke 1.6, extremos redondeados), dibujados a medida — requisito explícito.
+- **Se eliminaron** la sección "Cómo Pedir" y el segundo botón del hero (no existen en el prototipo).
+- **Se conservaron** todas las mejoras técnicas de la v1.0.0: número 412 correcto (12 enlaces), Open Graph/favicon, año automático, skip-link, focus visible, `aria-hidden`, botón flotante de WhatsApp, imágenes con `width/height`, `oreo-cutout.webp`.
+
+### Verificación
+
+- Etiquetas balanceadas, sin IDs duplicados, 0 imágenes rotas, 0 errores de consola.
+- Banda rosa continua entre #nosotros y #pedidos confirmada por estilos computados.
+- Responsive verificado en 375px: hamburguesa funcional (aria-expanded), sabores a 2 columnas, hero apilado, sin scroll horizontal.
+
+### Proceso
+
+- 6 agentes en paralelo, cada uno con su recorte del prototipo en alta resolución (2x); tokens de diseño compartidos definidos centralmente; ensamblaje determinista por script.
+
+---
+
 ## [1.0.0] — 2026-08-30
 
 Primera ronda de optimización y corrección del sitio.
