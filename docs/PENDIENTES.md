@@ -22,7 +22,7 @@ Tareas abiertas que necesitan **datos del dueño** o son mejoras opcionales.
 
 ## 🟡 Mejoras opcionales
 
-- [ ] **Re-exportar los 8 PNG con transparencia real** (no la vista previa con cuadritos). Los recortes actuales se rescataron por software y se ven bien en la tarjeta, pero con zoom quedan muescas pequeñas junto a las tapas y escalones leves en el vaso blanco del Coco. Un PNG bien exportado da bordes perfectos y no necesita el script: basta convertirlo a WebP. `tools/quitar_cuadros.py` queda para cuando llegue otra foto con los cuadritos pintados.
+- [ ] **Re-exportar los 8 PNG con transparencia real** (no la vista previa con cuadritos). Los recortes actuales se rescataron por software y, tras la revisión de la 2.6.0, se ven bien en la tarjeta; con zoom o sobre fondo oscuro quedan detalles menores (ver `docs/REVISION-RECORTES.md`). Un PNG bien exportado da bordes perfectos y no necesita el script: basta convertirlo a WebP. `tools/quitar_cuadros.py` queda para cuando llegue otra foto con los cuadritos pintados.
 
 - [ ] **Imágenes para compartir por sabor** (estados de WhatsApp / historias de Instagram). Si se quiere un botón "Compartir", conviene generar una imagen fija por sabor en vez de usar html2canvas: es más nítida, no carga ninguna librería y conserva la sombra de los vasitos.
 - [ ] **Auto-alojar las tipografías de Google** dentro de `assets/fonts/` para que la página **no haga peticiones externas** (100% autónoma/offline).

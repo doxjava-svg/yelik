@@ -1,0 +1,94 @@
+{
+  "ron-pasas": {
+    "fuente": "assets/assets 2/ronconpasas.png",
+    "script": "tools/recortes/quitar_cuadros_ron-pasas.py",
+    "params": {
+      "std_max": 5.5,
+      "min_comp": 1,
+      "any_tone": true,
+      "tone_depth": 3
+    },
+    "salida": "assets/vasito-ron-pasas.webp"
+  },
+  "coco": {
+    "fuente": "assets/assets 2/Coco.png",
+    "script": "tools/recortes/quitar_cuadros_coco.py",
+    "params": {
+      "wash_step": 20,
+      "bgcell_tol": 16,
+      "line_both_sides": true,
+      "shadow_edge_min": 0.4,
+      "chroma_max": 18,
+      "pure_tol": 4,
+      "tol_px_top": 12,
+      "shadow_blur": 20,
+      "soft_ramp": 0
+    },
+    "salida": "assets/vasito-coco.webp"
+  },
+  "fresa": {
+    "fuente": "assets/assets 2/Fresa.png",
+    "script": "tools/recortes/quitar_cuadros_fresa.py",
+    "params": {
+      "tol_px_hi": 24,
+      "refine_depth_hi": 3,
+      "hi_max_cells": 1.5
+    },
+    "salida": "assets/vasito-fresa.webp"
+  },
+  "chocolate": {
+    "fuente": "assets/assets 2/Choco.png",
+    "script": "tools/recortes/quitar_cuadros_chocolate.py",
+    "params": {
+      "split_cells": true,
+      "low_refine_depth": 6,
+      "low_bitone": true,
+      "low_cell_mode": 10,
+      "shadow_small_cells": 1.5,
+      "bg_keep_chroma": 20
+    },
+    "salida": "assets/vasito-chocolate.webp"
+  },
+  "oreo": {
+    "fuente": "assets/assets 2/oreo.png",
+    "script": "tools/recortes/quitar_cuadros_oreo.py",
+    "params": {
+      "tol_px": 8,
+      "line_support_px": 3,
+      "std_max": 4.5,
+      "shadow": false,
+      "refine_depth_low": 3,
+      "close_top_px": 45
+    },
+    "salida": "assets/vasito-oreo.webp"
+  },
+  "parchita": {
+    "fuente": "assets/assets 2/Parchita.png",
+    "script": "tools/quitar_cuadros.py",
+    "params": {
+      "refine_depth": 2,
+      "tol_px": 8,
+      "std_max": 2.5
+    },
+    "salida": "assets/vasito-parchita.webp"
+  },
+  "cafe": {
+    "fuente": "assets/assets 2/cafe.png",
+    "script": "tools/quitar_cuadros.py",
+    "params": {
+      "tol_px": 12.5
+    },
+    "salida": "assets/vasito-cafe.webp"
+  },
+  "galleta": {
+    "fuente": "assets/assets 2/Galleta.png",
+    "script": "tools/recortes/quitar_cuadros_galleta.py",
+    "params": {
+      "tol_px_g": 30,
+      "refine_depth_low": 3,
+      "low_any_parity": true,
+      "tol_low_w": 36
+    },
+    "salida": "assets/vasito-galleta.webp"
+  }
+}

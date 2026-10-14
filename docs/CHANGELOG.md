@@ -6,6 +6,29 @@ El formato sigue un estilo tipo *Keep a Changelog*. Las fechas están en formato
 
 ---
 
+## [2.6.0] — 2026-10-14
+
+**Recortes de los 8 sabores corregidos tras una revisión independiente.**
+
+- **Por qué:** ocho revisores (uno por sabor) inspeccionaron los recortes de la 2.3.0 a resolución completa, contra la foto original y sobre la tarjeta real. Encontraron **68 defectos, 27 de ellos visibles en la tarjeta**, en 7 de los 8 sabores. Lo verifiqué con una comparación antes/después. La 2.3.0 afirmaba que no se notaban: era incorrecto (corregido en esa entrada).
+- **Qué cambió en cada sabor:**
+  - **Ron Pasas:** fuera el bloque de cuadros sobre las pasas y los cuadritos entre ellas; recuperadas la punta del palito y la curva del ala derecha de la tapa.
+  - **Coco:** la sombra ya no se come los cubos de coco; corregido un mordisco en el lado derecho del vaso; menos restos en el contorno.
+  - **Fresa:** fuera las marcas grises junto al palito, los bloques alrededor de las hojas, una celda blanca entre el vaso y la media fresa y los bloques bajo las frutas.
+  - **Chocolate:** fuera los restos alrededor del bowl, entre la pila de chocolate y el vaso y junto a la chispa; recuperados la punta y el borde del palito.
+  - **Oreo:** la tapa ya no sale en bloques ni con cuadros flotando; la sombra ya no tiñe un costado del vaso; fuera las celdas entre el vaso y las galletas.
+  - **Parchita:** fuera la franja de cuadros entre el vaso y el pedúnculo derecho; la tapa derecha recupera su silueta.
+  - **Café:** el borde superior de la tapa queda casi continuo.
+  - **Galleta:** fuera los bloques grises a ambos lados del palito y los restos alrededor de las galletas.
+- **Reproducible:**
+  - seis sabores necesitaron una variante propia del script (`tools/recortes/quitar_cuadros_<sabor>.py`); Parchita y Café usan `tools/quitar_cuadros.py` con otros parámetros;
+  - las recetas están en `tools/recortes/recetas.json` y `python tools/recortes/regenerar.py` los vuelve a generar;
+  - con `--verificar` los compara contra `assets/`. Verificado: los 8 salen idénticos píxel por píxel.
+- **Informe completo:** `docs/REVISION-RECORTES.md`, con cada defecto, su severidad y si se notaba en la tarjeta.
+- **Queda pendiente:** detalles menores que solo se ven con zoom o sobre fondo oscuro (detallados en el informe). La solución de fondo sigue siendo exportar los PNG con transparencia real (ver PENDIENTES).
+
+---
+
 ## [2.5.0] — 2026-10-13
 
 Movimiento en el resto de la página: tres detalles. A propósito no se animan más secciones, para que "Nuestros sabores" siga siendo el momento principal.
@@ -60,7 +83,7 @@ Catálogo completo: **los 8 sabores** con vasito recortado estilo prototipo.
   - borra las islas sueltas con mezcla exacta de blanco y gris del tablero;
   - convierte la **sombra pintada bajo el producto** en sombra transparente real, solo en la parte baja y solo si cubre celdas blancas y grises.
 - Verificado: 8 tarjetas cargan sus recortes, alturas uniformes (360 px en escritorio, 245 px en móvil), 4/2 columnas, sin scroll horizontal.
-- Limitaciones conocidas: con zoom quedan muescas pequeñas junto a algunas tapas y escalones leves en el vaso blanco del Coco (blanco sobre blanco). No se notan en la tarjeta; un PNG con transparencia real las eliminaría (ver PENDIENTES).
+- Limitaciones conocidas: con zoom quedan muescas pequeñas junto a algunas tapas y escalones leves en el vaso blanco del Coco (blanco sobre blanco). ~~No se notan en la tarjeta~~ — **corregido en 2.6.0:** una revisión independiente mostró que en 7 de los 8 sabores sí había restos visibles en la tarjeta.
 
 ---
 
