@@ -1,7 +1,7 @@
 # Pendientes — Yelikshop Landing
 
 Tareas abiertas que necesitan **datos del dueño** o son mejoras opcionales.
-Última actualización: 2026-08-30.
+Última actualización: 2026-10-13.
 
 ---
 
@@ -11,10 +11,9 @@ Tareas abiertas que necesitan **datos del dueño** o son mejoras opcionales.
 - [x] **Usuario de Instagram confirmado:** `@yelik_shop` — verificado contra el sello de marca. Se descartó `@yelikshop_helados`.
 - [x] **Enlace de Instagram** apuntando a `https://www.instagram.com/yelik_shop` (footer: contacto y botón social).
 - [x] **Facebook eliminado** del footer (no existe la página) y reemplazado por un botón de **WhatsApp**.
+- [x] **Catálogo completo con vasitos recortados** (los 8 sabores) — 2026-10-13. Ver CHANGELOG 2.3.0.
 
 ## 🔴 Necesita tu confirmación / datos
-
-- [ ] **Recortes de los 6 sabores restantes** (Ron Pasas, Coco, Fresa, Chocolate, Parchita, Galleta) para completar el catálogo estilo prototipo. **IMPORTANTE al exportar:** descargar el **PNG transparente real**, no la vista previa — si se ve el patrón de cuadritos grises al abrir el archivo, está mal exportado. Los de Oreo y Café se rescataron por software, pero un PNG bien exportado da bordes perfectos (vale la pena re-exportar también el de Oreo, que perdió la cúpula de la tapa).
 
 - [ ] **URL de TikTok.** El ícono ya está en el footer en modo "próximamente" (sin enlace). Cuando exista la cuenta, pasar la URL: en `index.html` hay que cambiar el `<span class="ft-social-soon">` por `<a href="URL" target="_blank" rel="noopener">` y quitar la clase.
 - [ ] **Precios.** Por indicación del dueño **NO** se muestran precios por ahora. Reactivar si se decide agregarlos a las tarjetas de sabor.
@@ -22,6 +21,8 @@ Tareas abiertas que necesitan **datos del dueño** o son mejoras opcionales.
 - [ ] **Datos de operación (opcional pero recomendado).** Zona de entrega / retiro, horario y pedido mínimo, para reforzar la sección "Cómo Pedir".
 
 ## 🟡 Mejoras opcionales
+
+- [ ] **Re-exportar los 8 PNG con transparencia real** (no la vista previa con cuadritos). Los recortes actuales se rescataron por software y se ven bien en la tarjeta, pero con zoom quedan muescas pequeñas junto a las tapas y escalones leves en el vaso blanco del Coco. Un PNG bien exportado da bordes perfectos y no necesita el script: basta convertirlo a WebP. `tools/quitar_cuadros.py` queda para cuando llegue otra foto con los cuadritos pintados.
 
 - [ ] **Auto-alojar las tipografías de Google** dentro de `assets/fonts/` para que la página **no haga peticiones externas** (100% autónoma/offline).
 - [ ] **Optimizar los 8 JPG de sabores** (≈67–83 KB c/u) a WebP para bajar aún más el peso total.

@@ -6,6 +6,26 @@ El formato sigue un estilo tipo *Keep a Changelog*. Las fechas están en formato
 
 ---
 
+## [2.3.0] — 2026-10-13
+
+Catálogo completo: **los 8 sabores** con vasito recortado estilo prototipo.
+
+- **Las 6 tarjetas restantes** (Ron Pasas, Coco, Fresa, Chocolate, Parchita, Galleta) pasan a la variante `.sabor-media--cutout`; las 8 usan ahora `assets/vasito-*.webp` (1024×1024, alfa real, 63-81 KB c/u).
+- **Recortes regenerados con un algoritmo nuevo** (`tools/quitar_cuadros.py`). La versión de agosto dejaba restos visibles de cuadros en Fresa y Galleta y comía bordes en Coco. Causa: el tablero pintado en las fotos es irregular (lo dibujó una IA):
+  - celdas de 30-35 px con "costuras" de hasta 47 px y columnas angostas de 15 px;
+  - en Parchita, un **mosaico** de tableros con las columnas desfasadas por zonas;
+  - parches con la paridad invertida (dos celdas blancas juntas);
+  - celdas "lavadas" y con **tinte rosado** del producto cerca del vaso.
+- Cómo lo resuelve el script:
+  - detecta las líneas del tablero (filas globales, columnas por franja) y clasifica **celda por celda**: es fondo si es uniforme y sus vecinas son todas más claras o todas más oscuras. El helado blanco no pasa la prueba porque sus vecinas tienen su mismo tono;
+  - deduce el tono esperado de cada celda por paridad y refina píxel a píxel solo junto al producto (más profundo se comía las tapas de plástico);
+  - borra las islas sueltas con mezcla exacta de blanco y gris del tablero;
+  - convierte la **sombra pintada bajo el producto** en sombra transparente real, solo en la parte baja y solo si cubre celdas blancas y grises.
+- Verificado: 8 tarjetas cargan sus recortes, alturas uniformes (360 px en escritorio, 245 px en móvil), 4/2 columnas, sin scroll horizontal.
+- Limitaciones conocidas: con zoom quedan muescas pequeñas junto a algunas tapas y escalones leves en el vaso blanco del Coco (blanco sobre blanco). No se notan en la tarjeta; un PNG con transparencia real las eliminaría (ver PENDIENTES).
+
+---
+
 ## [2.2.0] — 2026-08-31
 
 Catálogo: primeras tarjetas con **vasito recortado estilo prototipo** (Oreo y Café).
