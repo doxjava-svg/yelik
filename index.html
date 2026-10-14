@@ -53,6 +53,9 @@
 /* ==================== BASE ==================== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
 body {
   background-color: var(--cream);
   color: var(--ink);
@@ -142,8 +145,17 @@ a:focus-visible, button:focus-visible {
   justify-content: center;
   box-shadow: 0 10px 26px rgba(37, 211, 102, 0.45);
   transition: transform 0.2s ease, background 0.2s ease;
+  animation: wa-in 400ms var(--ease-out) 800ms backwards;
 }
-.wa-float:hover { transform: scale(1.08); background: #1fb457; }
+@keyframes wa-in { from { opacity: 0; transform: scale(0.6); } }
+@media (hover: hover) and (pointer: fine) {
+  .wa-float:hover { transform: scale(1.08); background: #1fb457; }
+}
+.wa-float:active { transform: scale(0.94); transition: transform 160ms var(--ease-out); }
+@keyframes wa-fade { from { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .wa-float { animation-name: wa-fade; }
+}
 .wa-float svg { width: 34px; height: 34px; fill: currentColor; }
 
 /* ==================== SECCIÓN: HEADER ==================== */
@@ -221,7 +233,7 @@ a:focus-visible, button:focus-visible {
   .site-header__cta{ display:none; }
   .menu-toggle{ display:inline-flex; }
   .site-header__nav{
-    display:none;
+    display:flex;
     position:absolute;
     top:calc(100% - 12px);
     left:0;
@@ -235,8 +247,18 @@ a:focus-visible, button:focus-visible {
     border-radius:16px;
     box-shadow:var(--shadow-lg);
     z-index:60;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-8px) scale(.98);
+    transform-origin:top center;
+    transition:opacity 150ms var(--ease-out), transform 150ms var(--ease-out), visibility 0s linear 150ms;
   }
-  .site-header__nav.open{ display:flex; }
+  .site-header__nav.open{
+    opacity:1;
+    visibility:visible;
+    transform:none;
+    transition:opacity 200ms var(--ease-out), transform 200ms var(--ease-out), visibility 0s;
+  }
   .site-header__nav a{
     padding:13px 16px;
     border-radius:10px;
@@ -263,6 +285,12 @@ a:focus-visible, button:focus-visible {
 .hero-title{font-family:var(--font-serif);font-weight:500;font-size:clamp(40px,5vw,62px);line-height:1.08;color:var(--ink);margin:0;}
 .hero-title em{font-style:italic;color:var(--pink);}
 .hero-doodle{display:inline-block;width:30px;height:auto;color:var(--pink);transform:rotate(8deg);margin-left:8px;vertical-align:-2px;}
+.hero-doodle path{stroke-dasharray:1;stroke-dashoffset:0;}
+@keyframes doodle-draw{from{stroke-dashoffset:1;}}
+@media (prefers-reduced-motion:no-preference){
+  .hero-doodle path{animation:doodle-draw .9s var(--ease-in-out) .3s backwards;}
+  .hero-doodle path + path{animation-duration:.3s;animation-delay:1.15s;}
+}
 
 .hero-rule{display:block;width:70px;height:2px;border-radius:2px;background:var(--pink-deep);margin:24px 0 20px;}
 
@@ -791,7 +819,7 @@ a:focus-visible, button:focus-visible {
     <div class="hero-copy">
       <p class="hero-eyebrow">Helados caseros en vasito</p>
 
-      <h1 class="hero-title">Helados caseros<br>que saben a<br><em>hecho con amor.</em><svg class="hero-doodle" viewBox="0 0 36 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 27C10.6 21.5 5.5 17 5.5 12.2 5.5 8.6 8.1 6 11.3 6c2.4 0 4.5 1.4 5.7 3.7C18.2 7.4 20.3 6 22.7 6c3.2 0 5.8 2.6 5.8 6.2 0 4.5-4.3 8.7-10 13.9"/><path d="M32 20.5c1.1-.5 2-1.2 2.7-2"/></svg></h1>
+      <h1 class="hero-title">Helados caseros<br>que saben a<br><em>hecho con amor.</em><svg class="hero-doodle" viewBox="0 0 36 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M17 27C10.6 21.5 5.5 17 5.5 12.2 5.5 8.6 8.1 6 11.3 6c2.4 0 4.5 1.4 5.7 3.7C18.2 7.4 20.3 6 22.7 6c3.2 0 5.8 2.6 5.8 6.2 0 4.5-4.3 8.7-10 13.9"/><path pathLength="1" d="M32 20.5c1.1-.5 2-1.2 2.7-2"/></svg></h1>
 
       <span class="hero-rule" aria-hidden="true"></span>
 

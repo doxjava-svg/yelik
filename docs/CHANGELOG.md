@@ -6,6 +6,26 @@ El formato sigue un estilo tipo *Keep a Changelog*. Las fechas están en formato
 
 ---
 
+## [2.5.0] — 2026-10-13
+
+Movimiento en el resto de la página: tres detalles. A propósito no se animan más secciones, para que "Nuestros sabores" siga siendo el momento principal.
+
+- **Menú móvil que se despliega:** antes aparecía y desaparecía de golpe (`display:none` → `flex`, que no se puede animar). Ahora:
+  - abre en 200 ms, apareciendo y bajando desde `translateY(-8px) scale(.98)` con origen arriba, y cierra en 150 ms;
+  - `visibility` mantiene los enlaces fuera del teclado y del lector de pantalla mientras está cerrado, igual que antes.
+- **Botón flotante de WhatsApp:**
+  - entra una vez por visita, ~0.8 s después de cargar, creciendo desde 60% en 400 ms;
+  - al presionarlo se encoge a 94% (160 ms);
+  - el hover queda restringido a mouse, para que no se pegue en el celular.
+- **Corazón junto a "hecho con amor.":** se dibuja solo al cargar (0.9 s, desde 0.3 s) y su trazo final aparece después. Es el mismo gesto del divisor; el texto y la foto del inicio se ven al instante.
+- **Accesibilidad:** con "reducir movimiento" activado se apaga el scroll suave de los enlaces internos, el corazón aparece ya dibujado y el botón de WhatsApp solo aparece suavemente.
+- Verificado:
+  - menú: estados abierto y cerrado, foco del teclado, `aria-expanded` y transiciones de 200 ms;
+  - corazón y botón: capturas reales de Chrome headless a 200, 700, 1000 y 2500 ms.
+- **Descartado:** animar todo el inicio al cargar (retrasa la lectura y la carga), aparición al hacer scroll en todas las secciones, latido periódico del botón de WhatsApp, ola o mancha decorativas en movimiento, y hover en íconos que no se pueden tocar.
+
+---
+
 ## [2.4.0] — 2026-10-13
 
 Movimiento en la sección "Nuestros sabores": cuatro animaciones discretas, elegidas con una demo interactiva.
