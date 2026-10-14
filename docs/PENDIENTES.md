@@ -24,6 +24,7 @@ Tareas abiertas que necesitan **datos del dueño** o son mejoras opcionales.
 
 - [ ] **Re-exportar los 8 PNG con transparencia real** (no la vista previa con cuadritos). Los recortes actuales se rescataron por software y se ven bien en la tarjeta, pero con zoom quedan muescas pequeñas junto a las tapas y escalones leves en el vaso blanco del Coco. Un PNG bien exportado da bordes perfectos y no necesita el script: basta convertirlo a WebP. `tools/quitar_cuadros.py` queda para cuando llegue otra foto con los cuadritos pintados.
 
+- [ ] **Imágenes para compartir por sabor** (estados de WhatsApp / historias de Instagram). Si se quiere un botón "Compartir", conviene generar una imagen fija por sabor en vez de usar html2canvas: es más nítida, no carga ninguna librería y conserva la sombra de los vasitos.
 - [ ] **Auto-alojar las tipografías de Google** dentro de `assets/fonts/` para que la página **no haga peticiones externas** (100% autónoma/offline).
 - [ ] **Optimizar los 8 JPG de sabores** (≈67–83 KB c/u) a WebP para bajar aún más el peso total.
 - [ ] **Borrar archivos no usados** de `assets/` si se confirma que son basura de trabajo: `ChatGPT Image ....png` (la (2) ya se aprovechó como fuente de `logo-vertical.webp`), `test_crop.png`, `oreo-cutout.png` y `oreo-cutout.webp` (ambos sin uso desde que el CTA muestra el logo vertical).

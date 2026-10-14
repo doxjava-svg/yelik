@@ -46,6 +46,8 @@
   --max-width: 1140px;
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 /* ==================== BASE ==================== */
@@ -95,6 +97,10 @@ a { text-decoration: none; color: inherit; transition: all 0.2s ease; }
   background: var(--pink-hover);
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(239, 92, 137, 0.38);
+}
+.btn:active {
+  transform: scale(0.97);
+  transition: transform 160ms var(--ease-out), background 0.2s ease, box-shadow 0.2s ease;
 }
 .btn svg { width: 16px; height: 16px; flex-shrink: 0; }
 .btn-sm { padding: 8px 18px; font-size: 11px; letter-spacing: 0.05em; }
@@ -282,6 +288,15 @@ a:focus-visible, button:focus-visible {
 /* ============ DIVISOR ORNAMENTAL ============ */
 .section-divider{text-align:center;line-height:0;color:var(--pink);padding:0 0 10px;}
 .section-divider svg{display:inline-block;width:140px;height:auto;opacity:.85;}
+/* el adorno se dibuja solo la primera vez que aparece en pantalla */
+.section-divider .flourish{stroke-dasharray:1;stroke-dashoffset:0;}
+.section-divider .flourish-heart{transform-box:fill-box;transform-origin:center;}
+@media (prefers-reduced-motion:no-preference){
+  .js-reveal .section-divider:not(.is-in) .flourish{stroke-dashoffset:1;}
+  .js-reveal .section-divider:not(.is-in) .flourish-heart{opacity:0;transform:scale(.6);}
+  .section-divider.is-in .flourish{transition:stroke-dashoffset 1.1s var(--ease-in-out);}
+  .section-divider.is-in .flourish-heart{transition:opacity .4s var(--ease-out) .7s,transform .4s var(--ease-out) .7s;}
+}
 
 /* ============ RESPONSIVE ============ */
 @media (max-width:992px){
@@ -307,11 +322,26 @@ a:focus-visible, button:focus-visible {
 .section-sabores{padding:50px 0 80px;}
 .sabores-kicker{display:block;text-align:center;font-family:var(--font-sans);color:var(--pink);text-transform:uppercase;font-size:13px;font-weight:800;letter-spacing:.22em;margin:0 0 40px;}
 .sabores-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
-.sabor-card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-sm);padding:12px 12px 20px;text-align:center;transition:transform .25s ease,box-shadow .25s ease;}
-.sabor-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);}
+.sabor-card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-sm);padding:12px 12px 20px;text-align:center;transition:transform .3s var(--ease-out),box-shadow .3s var(--ease-out);}
 .sabor-media{border-radius:12px;aspect-ratio:1/1;overflow:hidden;background:var(--pink-light);}
-.sabor-media img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .45s ease;}
-.sabor-card:hover .sabor-media img{transform:scale(1.06);}
+.sabor-media img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .4s var(--ease-out);}
+/* solo con mouse: en pantallas táctiles el hover se queda "pegado" tras volver de WhatsApp */
+@media (hover:hover) and (pointer:fine){
+  .sabor-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+  .sabor-card:hover .sabor-media img{transform:scale(1.06);}
+  .sabor-card:hover .sabor-media--cutout img{transform:translateY(-8px) rotate(-3deg) scale(1.05);}
+}
+/* entrada escalonada: la clase js-reveal la pone un script del <head>, así sin JS todo se ve */
+@keyframes sabor-in{from{opacity:0;transform:translateY(16px) scale(.97);}}
+@keyframes sabor-fade{from{opacity:0;}}
+.js-reveal .sabor-card:not(.is-in){opacity:0;}
+.sabor-card.is-in{animation:sabor-in .6s var(--ease-out) backwards;animation-delay:var(--d,0ms);}
+@media (prefers-reduced-motion:reduce){
+  .sabor-card.is-in{animation:sabor-fade .3s ease-out backwards;}
+}
+@media (prefers-reduced-motion:reduce) and (hover:hover) and (pointer:fine){
+  .sabor-card:hover .sabor-media--cutout img{transform:translateY(-4px);}
+}
 /* Variante para fotos recortadas (sin fondo): vasito flotante estilo prototipo */
 .sabor-media--cutout{background:radial-gradient(85% 85% at 50% 40%, #fff4f8 0%, var(--pink-light) 72%);}
 .sabor-media--cutout img{object-fit:contain;padding:9%;filter:drop-shadow(0 14px 16px rgba(83,44,49,.16));}
@@ -725,6 +755,7 @@ a:focus-visible, button:focus-visible {
   }
 }
 </style>
+<script>document.documentElement.classList.add('js-reveal');</script>
 </head>
 <body>
 
@@ -798,7 +829,7 @@ a:focus-visible, button:focus-visible {
 </section>
 
 <div class="section-divider" aria-hidden="true">
-  <svg viewBox="0 0 140 30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 16C18 20 30 20 38 15c4-2.5 3-7.5-.5-7C34.5 8.5 34.5 12.5 38.5 13.5 45 15.2 53 13.8 59 11.3"/><path d="M132 16c-10 4-22 4-30-1-4-2.5-3-7.5.5-7 3 .5 3 4.5-1 5.5-6.5 1.7-14.5.3-20.5-2.2"/><path d="M70 21.5c-3.6-2.8-6.2-5.2-6.2-7.9 0-1.9 1.4-3.3 3.2-3.3 1.2 0 2.3.7 3 1.9.7-1.2 1.8-1.9 3-1.9 1.8 0 3.2 1.4 3.2 3.3 0 2.7-2.6 5.1-6.2 7.9Z"/><circle cx="4.5" cy="15" r="1.3" fill="currentColor" stroke="none"/><circle cx="135.5" cy="15" r="1.3" fill="currentColor" stroke="none"/></svg>
+  <svg viewBox="0 0 140 30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="flourish" pathLength="1" d="M8 16C18 20 30 20 38 15c4-2.5 3-7.5-.5-7C34.5 8.5 34.5 12.5 38.5 13.5 45 15.2 53 13.8 59 11.3"/><path class="flourish" pathLength="1" d="M132 16c-10 4-22 4-30-1-4-2.5-3-7.5.5-7 3 .5 3 4.5-1 5.5-6.5 1.7-14.5.3-20.5-2.2"/><path class="flourish-heart" d="M70 21.5c-3.6-2.8-6.2-5.2-6.2-7.9 0-1.9 1.4-3.3 3.2-3.3 1.2 0 2.3.7 3 1.9.7-1.2 1.8-1.9 3-1.9 1.8 0 3.2 1.4 3.2 3.3 0 2.7-2.6 5.1-6.2 7.9Z"/><circle cx="4.5" cy="15" r="1.3" fill="currentColor" stroke="none"/><circle cx="135.5" cy="15" r="1.3" fill="currentColor" stroke="none"/></svg>
 </div>
 
 <section class="section-sabores" id="sabores">
@@ -1057,6 +1088,26 @@ a:focus-visible, button:focus-visible {
 (function() {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  const cards = Array.from(document.querySelectorAll('.sabor-card'));
+  const reveal = cards.concat(Array.from(document.querySelectorAll('.section-divider')));
+  if (!('IntersectionObserver' in window)) {
+    reveal.forEach(el => el.classList.add('is-in'));
+  } else {
+    const io = new IntersectionObserver(entries => {
+      let k = 0;
+      entries
+        .filter(e => e.isIntersecting)
+        .map(e => e.target)
+        .sort((a, b) => cards.indexOf(a) - cards.indexOf(b))
+        .forEach(el => {
+          if (el.classList.contains('sabor-card')) el.style.setProperty('--d', (k++ * 60) + 'ms');
+          el.classList.add('is-in');
+          io.unobserve(el);
+        });
+    }, { threshold: 0.2 });
+    reveal.forEach(el => io.observe(el));
+  }
 
   const menuBtn = document.getElementById('menu-btn');
   const navMenu = document.getElementById('nav-menu');

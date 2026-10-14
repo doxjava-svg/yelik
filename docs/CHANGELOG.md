@@ -6,6 +6,24 @@ El formato sigue un estilo tipo *Keep a Changelog*. Las fechas están en formato
 
 ---
 
+## [2.4.0] — 2026-10-13
+
+Movimiento en la sección "Nuestros sabores": cuatro animaciones discretas, elegidas con una demo interactiva.
+
+- **Entrada escalonada:** al aparecer en pantalla, cada tarjeta sube y aparece (`translateY(16px) scale(.97)` → su lugar, 600 ms), con 60 ms entre una y otra, en orden. Se dispara una sola vez por tarjeta con `IntersectionObserver`, así en el celular cada fila entra cuando llegas a ella.
+- **Vasito que se asoma:** con el mouse encima, la tarjeta sube 4 px y el vasito recortado se levanta e inclina (`translateY(-8px) rotate(-3deg) scale(1.05)`, 400 ms).
+- **Respuesta al toque en los botones:** `.btn:active` se encoge a `scale(.97)` en 160 ms. Aplica a todos los botones de la página, empezando por "Pedir", que en el celular no tenía ninguna respuesta.
+- **Divisor que se dibuja:** el adorno sobre la sección se traza desde las puntas (1.1 s) y el corazón aparece al final.
+- **Corrección:** el hover de las tarjetas ahora solo se activa con mouse (`@media (hover:hover) and (pointer:fine)`). Antes, en el celular la tarjeta quedaba levantada al volver de WhatsApp.
+- **Tokens nuevos** en `:root`: `--ease-out` y `--ease-in-out`.
+- **Accesibilidad y respaldo:**
+  - con "reducir movimiento" activado en el sistema, las tarjetas solo aparecen suavemente y el divisor se muestra ya dibujado;
+  - sin JavaScript todo se ve normal: el estado oculto depende de la clase `js-reveal`, que pone un script del `<head>`.
+- Verificado con capturas reales de Chrome headless: entrada en orden, divisor dibujado y estado final completo.
+- **Descartado:** html2canvas (convierte la página en imagen; no anima, pesa ~200 KB y no dibuja la sombra de los vasitos), vasitos flotando todo el tiempo, inclinación 3D con el mouse y confeti al pedir.
+
+---
+
 ## [2.3.0] — 2026-10-13
 
 Catálogo completo: **los 8 sabores** con vasito recortado estilo prototipo.
